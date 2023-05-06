@@ -216,7 +216,7 @@ namespace UC11_AGENDA_DE_CONTATOS
             try
             {
                 conexao.Open();
-                comando.CommandText = "UPDATE tbl_agenda SET nome = '"+ textBoxNOME.Text +"', sobrenome = '"+ textBoxSOBRENOME.Text +"', telefone = '"+ textBoxTELEFONE.Text +"', celular = '"+ textBoxCELULAR.Text +"', email = '"+ textBoxEMAIL.Text +"', linkdin = '"+ textBoxLINKEDIN.Text +"', atividade = '" + situacao + "' id = '"+ textBoxID.Text +"';";
+                comando.CommandText = "UPDATE tbl_agenda SET nome = '" + textBoxNOME.Text +"', sobrenome = '"+ textBoxSOBRENOME.Text +"', telefone = '"+ textBoxTELEFONE.Text +"', celular = '"+ textBoxCELULAR.Text +"', email = '"+ textBoxEMAIL.Text +"', linkdin = '"+ textBoxLINKEDIN.Text +"', atividade = '" + situacao + "' WHERE id = " + textBoxID.Text + ";";
                 comando.ExecuteNonQuery();
                 MessageBox.Show("Contato atualizado com sucesso!");
             }
@@ -234,7 +234,45 @@ namespace UC11_AGENDA_DE_CONTATOS
 
         private void buttonPESQUISAR_Click(object sender, EventArgs e)
         {
-            textBoxNOME.Text = dataGridViewPESQUISA.CurrentRow.Cells[1].Value.ToString();
+            // textBoxNOME.Text = dataGridViewPESQUISA.CurrentRow.Cells[1].Value.ToString();
+
+            MySqlDataAdapter adaptadorCONTATO = new MySqlDataAdapter(comando);
+
+            DataTable tabelaCONTATO = new DataTable();
+            adaptadorCONTATO.Fill(tabelaCONTATO);
+
+            dataGridViewPESQUISA.DataSource = tabelaCONTATO;
+            dataGridViewPESQUISA.Columns["id"].HeaderText = "código";
+            dataGridViewPESQUISA.Columns["email"].HeaderText = "e-mail";
+
+            try
+            {
+                conexao.Open();
+                comando.CommandText = "SELECT * FROM tbl_agenda WHERE nome = '" + textBoxNOME.Text + "';";
+                comando.ExecuteNonQuery();
+                textBoxNOME.Text = dataGridViewPESQUISA.CurrentRow.Cells[1].Value.ToString();
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+                //MessageBox.Show("Erro ao atualizar o contato!");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        private void buttonLIMPAR_Click(object sender, EventArgs e)
+        {
+            textBoxID.Text = "";
+            textBoxNOME.Text = "";
+            textBoxSOBRENOME.Text = "";
+            textBoxTELEFONE.Text = "";
+            textBoxCELULAR.Text = "";
+            textBoxEMAIL.Text = "";
+            textBoxLINKEDIN.Text = "";
         }
     }
 }

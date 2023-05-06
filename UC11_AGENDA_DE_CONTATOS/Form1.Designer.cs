@@ -50,6 +50,7 @@
             this.groupBoxATIVIDADE = new System.Windows.Forms.GroupBox();
             this.textBoxID = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.buttonLIMPAR = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPESQUISA)).BeginInit();
             this.groupBoxATIVIDADE.SuspendLayout();
             this.SuspendLayout();
@@ -250,11 +251,22 @@
             this.label7.TabIndex = 22;
             this.label7.Text = "id";
             // 
+            // buttonLIMPAR
+            // 
+            this.buttonLIMPAR.Location = new System.Drawing.Point(149, 429);
+            this.buttonLIMPAR.Name = "buttonLIMPAR";
+            this.buttonLIMPAR.Size = new System.Drawing.Size(75, 23);
+            this.buttonLIMPAR.TabIndex = 23;
+            this.buttonLIMPAR.Text = "Limpar";
+            this.buttonLIMPAR.UseVisualStyleBackColor = true;
+            this.buttonLIMPAR.Click += new System.EventHandler(this.buttonLIMPAR_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1007, 527);
+            this.Controls.Add(this.buttonLIMPAR);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBoxID);
             this.Controls.Add(this.groupBoxATIVIDADE);
@@ -309,6 +321,7 @@
         private System.Windows.Forms.GroupBox groupBoxATIVIDADE;
         private System.Windows.Forms.TextBox textBoxID;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button buttonLIMPAR;
     }
 }
 
