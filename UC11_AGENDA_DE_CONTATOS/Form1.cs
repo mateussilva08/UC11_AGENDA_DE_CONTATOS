@@ -34,7 +34,7 @@ namespace UC11_AGENDA_DE_CONTATOS
             try
             {
                 conexao.Open();
-                comando.CommandText = "SELECT * FROM tbl_agenda;";
+                comando.CommandText = "SELECT * FROM tbl_agenda ORDER BY nome ASC;";
 
                 MySqlDataAdapter adaptadorCONTATO = new MySqlDataAdapter(comando);
 
