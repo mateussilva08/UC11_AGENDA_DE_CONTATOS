@@ -51,6 +51,7 @@
             this.textBoxID = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.buttonLIMPAR = new System.Windows.Forms.Button();
+            this.mySqlDataAdapter1 = new MySql.Data.MySqlClient.MySqlDataAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPESQUISA)).BeginInit();
             this.groupBoxATIVIDADE.SuspendLayout();
             this.SuspendLayout();
@@ -100,6 +101,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(50, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
@@ -109,6 +112,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label2.Location = new System.Drawing.Point(47, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
@@ -118,6 +123,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label3.Location = new System.Drawing.Point(50, 171);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
@@ -127,6 +134,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label4.Location = new System.Drawing.Point(215, 171);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 13);
@@ -136,6 +145,8 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label5.Location = new System.Drawing.Point(215, 35);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 13);
@@ -145,6 +156,8 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label6.Location = new System.Drawing.Point(215, 109);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(39, 13);
@@ -153,6 +166,7 @@
             // 
             // buttonCADASTRAR
             // 
+            this.buttonCADASTRAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCADASTRAR.Location = new System.Drawing.Point(50, 375);
             this.buttonCADASTRAR.Name = "buttonCADASTRAR";
             this.buttonCADASTRAR.Size = new System.Drawing.Size(75, 23);
@@ -163,6 +177,7 @@
             // 
             // buttonPESQUISAR
             // 
+            this.buttonPESQUISAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPESQUISAR.Location = new System.Drawing.Point(559, 264);
             this.buttonPESQUISAR.Name = "buttonPESQUISAR";
             this.buttonPESQUISAR.Size = new System.Drawing.Size(369, 23);
@@ -173,6 +188,7 @@
             // 
             // buttonEXCLUIR
             // 
+            this.buttonEXCLUIR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEXCLUIR.Location = new System.Drawing.Point(244, 375);
             this.buttonEXCLUIR.Name = "buttonEXCLUIR";
             this.buttonEXCLUIR.Size = new System.Drawing.Size(75, 23);
@@ -183,6 +199,7 @@
             // 
             // buttonALTERAR
             // 
+            this.buttonALTERAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonALTERAR.Location = new System.Drawing.Point(149, 375);
             this.buttonALTERAR.Name = "buttonALTERAR";
             this.buttonALTERAR.Size = new System.Drawing.Size(75, 23);
@@ -193,6 +210,7 @@
             // 
             // dataGridViewPESQUISA
             // 
+            this.dataGridViewPESQUISA.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewPESQUISA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPESQUISA.Location = new System.Drawing.Point(559, 29);
             this.dataGridViewPESQUISA.Name = "dataGridViewPESQUISA";
@@ -241,10 +259,13 @@
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.Size = new System.Drawing.Size(100, 20);
             this.textBoxID.TabIndex = 21;
+            this.textBoxID.TextChanged += new System.EventHandler(this.textBoxID_TextChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label7.Location = new System.Drawing.Point(361, 35);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(15, 13);
@@ -253,6 +274,7 @@
             // 
             // buttonLIMPAR
             // 
+            this.buttonLIMPAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLIMPAR.Location = new System.Drawing.Point(149, 429);
             this.buttonLIMPAR.Name = "buttonLIMPAR";
             this.buttonLIMPAR.Size = new System.Drawing.Size(75, 23);
@@ -261,11 +283,18 @@
             this.buttonLIMPAR.UseVisualStyleBackColor = true;
             this.buttonLIMPAR.Click += new System.EventHandler(this.buttonLIMPAR_Click);
             // 
+            // mySqlDataAdapter1
+            // 
+            this.mySqlDataAdapter1.DeleteCommand = null;
+            this.mySqlDataAdapter1.InsertCommand = null;
+            this.mySqlDataAdapter1.SelectCommand = null;
+            this.mySqlDataAdapter1.UpdateCommand = null;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1007, 527);
+            this.ClientSize = new System.Drawing.Size(1007, 628);
             this.Controls.Add(this.buttonLIMPAR);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBoxID);
@@ -322,6 +351,7 @@
         private System.Windows.Forms.TextBox textBoxID;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button buttonLIMPAR;
+        private MySql.Data.MySqlClient.MySqlDataAdapter mySqlDataAdapter1;
     }
 }
 

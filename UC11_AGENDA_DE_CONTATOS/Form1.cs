@@ -63,7 +63,7 @@ namespace UC11_AGENDA_DE_CONTATOS
         {
             bool novo_contato = true;
 
-            string situaca = "desbloqueado";
+            string situacao = "desbloqueado";
 
             if (radioButtonDESBLOQUEADO.Checked)
             {
@@ -72,10 +72,10 @@ namespace UC11_AGENDA_DE_CONTATOS
 
             if (radioButtonBLOQUEADO.Checked)
             {
-                situaca = "bloqueado";
+                situacao = "bloqueado";
             }
 
-            if (textBoxNOME.Text != ""  && textBoxCELULAR.Text != "" && situaca != "") {
+            if (textBoxNOME.Text != ""  && textBoxCELULAR.Text != "" && situacao != "") {
 
                 try
                 {
@@ -105,17 +105,7 @@ namespace UC11_AGENDA_DE_CONTATOS
 
 
 
-                string situacao = "desbloqueado";
-
-                if (radioButtonDESBLOQUEADO.Checked)
-                {
-
-                }
-
-                if (radioButtonBLOQUEADO.Checked)
-                {
-                    situacao = "bloqueado";
-                }
+               
 
                 try
                 {
@@ -273,6 +263,11 @@ namespace UC11_AGENDA_DE_CONTATOS
             textBoxCELULAR.Text = "";
             textBoxEMAIL.Text = "";
             textBoxLINKEDIN.Text = "";
+        }
+
+        private void textBoxID_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
