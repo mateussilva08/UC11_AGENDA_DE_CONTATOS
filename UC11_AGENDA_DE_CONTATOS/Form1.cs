@@ -238,7 +238,7 @@ namespace UC11_AGENDA_DE_CONTATOS
             try
             {
                 conexao.Open();
-                comando.CommandText = "SELECT * FROM tbl_agenda WHERE nome = '" + textBoxNOME.Text + "';";
+                comando.CommandText = "SELECT * FROM tbl_agenda WHERE nome LIKE '$" + textBoxNOME.Text + "$';";
                 comando.ExecuteNonQuery();
                 textBoxNOME.Text = dataGridViewPESQUISA.CurrentRow.Cells[1].Value.ToString();
 
